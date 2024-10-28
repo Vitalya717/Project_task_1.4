@@ -11,6 +11,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -27,7 +29,8 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $(Selectors.byCssSelector("[data-test-id='notification']")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + date));
     }
 
     @Test
@@ -41,7 +44,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Поле обязательно для заполнения")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Поле обязательно для заполнения")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -55,7 +58,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Доставка в выбранный город недоступна")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Доставка в выбранный город недоступна")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -69,7 +72,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Доставка в выбранный город недоступна")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Доставка в выбранный город недоступна")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -83,7 +86,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Доставка в выбранный город недоступна")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Доставка в выбранный город недоступна")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -97,7 +100,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Доставка в выбранный город недоступна")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Доставка в выбранный город недоступна")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -111,7 +114,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Доставка в выбранный город недоступна")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Доставка в выбранный город недоступна")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -125,7 +128,8 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $(Selectors.byCssSelector("[data-test-id='notification']")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + date));
     }
 
     @Test
@@ -139,7 +143,8 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $(Selectors.byCssSelector("[data-test-id='notification']")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + date));
     }
 
     @Test
@@ -153,7 +158,8 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $(Selectors.byCssSelector("[data-test-id='notification']")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + date));
     }
 
     @Test
@@ -167,7 +173,8 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $(Selectors.byCssSelector("[data-test-id='notification']")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + date));
     }
 
     @Test
@@ -181,7 +188,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Доставка в выбранный город недоступна")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Доставка в выбранный город недоступна")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -193,7 +200,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Неверно введена дата")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Неверно введена дата")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -207,7 +214,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Заказ на выбранную дату невозможен")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Заказ на выбранную дату невозможен")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -221,7 +228,8 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $(Selectors.byCssSelector("[data-test-id='notification']")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + date));
     }
 
     @Test
@@ -235,7 +243,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Заказ на выбранную дату невозможен")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Заказ на выбранную дату невозможен")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -249,7 +257,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Заказ на выбранную дату невозможен")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Заказ на выбранную дату невозможен")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -263,7 +271,8 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $(Selectors.byCssSelector("[data-test-id='notification']")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + date));
     }
 
     @Test
@@ -277,7 +286,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -291,7 +300,8 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $(Selectors.byCssSelector("[data-test-id='notification']")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + date));
     }
 
     @Test
@@ -305,7 +315,8 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $(Selectors.byCssSelector("[data-test-id='notification']")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + date));
     }
 
     @Test
@@ -319,7 +330,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -333,7 +344,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Поле обязательно для заполнения")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Поле обязательно для заполнения")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -347,7 +358,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -361,7 +372,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -375,7 +386,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Поле обязательно для заполнения")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Поле обязательно для заполнения")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -389,7 +400,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -403,7 +414,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Поле обязательно для заполнения")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Поле обязательно для заполнения")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -417,7 +428,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+7");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -431,7 +442,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+7911000778");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -445,7 +456,7 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+791100077889");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
     @Test
@@ -458,7 +469,8 @@ public class OrderingBankCardTest {
         $("[data-test-id='name'] input").setValue("Иванов Иван");
         $("[data-test-id='phone'] input").setValue("+791100077889");
         $(".button").click();
-        $$(Selectors.byCssSelector("[data-test-id='agreement']")).find(exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + date));
     }
 
     @Test
@@ -473,7 +485,8 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $(Selectors.byCssSelector("[data-test-id='notification']")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + date));
     }
 
     @Test
@@ -488,6 +501,6 @@ public class OrderingBankCardTest {
         $("[data-test-id='phone'] input").setValue("+79110007788");
         $("[data-test-id='agreement']").click();
         $(".button").click();
-        $(Selectors.byCssSelector("[data-test-id='notification']")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(Selectors.byCssSelector("[data-test-id='notification']")).shouldBe(visible, Duration.ofSeconds(15));
     }
 }
