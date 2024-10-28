@@ -22,7 +22,7 @@ public class OrderingBankCardTest {
     public void fillInTheCardDeliveryFormWithValidValues() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -37,7 +37,7 @@ public class OrderingBankCardTest {
     public void fillInTheCardDeliveryFormWithValidValuesWithoutSpecifyingTheCity() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -51,7 +51,7 @@ public class OrderingBankCardTest {
     public void specifyCityThatDoesNotBelongToTheAdministrativeCentersOfTheRussianFederation() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Лондон");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -65,7 +65,7 @@ public class OrderingBankCardTest {
     public void fillInTheCityFieldInLatinLetters() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Saratov");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -79,7 +79,7 @@ public class OrderingBankCardTest {
     public void fillInTheCityFieldWithValidValueHighlightedWithApostrophes() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("'Саратов'");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -93,7 +93,7 @@ public class OrderingBankCardTest {
     public void fillInTheCityFieldWithSpecialSigns() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("!><?.");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -107,7 +107,7 @@ public class OrderingBankCardTest {
     public void fillInTheCityFieldWithNumbers() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("123456");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -121,7 +121,7 @@ public class OrderingBankCardTest {
     public void fillInTheCityFieldWithValidValueSeparatedByHyphen() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Ростов-на-Дону");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -136,7 +136,7 @@ public class OrderingBankCardTest {
     public void fillInTheCityFieldWithValidValueSeparatedBySpace() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Нижний Новгород");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -151,7 +151,7 @@ public class OrderingBankCardTest {
     public void fillInTheCityFieldWithValidValueWithTheLetterЁ() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Орёл");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -166,7 +166,7 @@ public class OrderingBankCardTest {
     public void fillInTheCityFieldWithValidValueWithTheLetterЙ() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Петропавловск-Камчатский");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -181,7 +181,7 @@ public class OrderingBankCardTest {
     public void fillInTheCityFieldWithValidValueByWritingTheLetterЁInsteadOfTheLetterE() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Орел");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -195,7 +195,7 @@ public class OrderingBankCardTest {
     public void fillInTheCardDeliveryFormWithValidValuesWithoutSpecifyingTheDate() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Саратов");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
         form.$("[data-test-id='phone'] input").setValue("+79110007788");
         form.$("[data-test-id='agreement']").click();
@@ -207,7 +207,7 @@ public class OrderingBankCardTest {
     public void fillInTheCardDeliveryFormWithValidValuesWithDateEarlierThanThreeDaysFromTheCurrentDate() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Саратов");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(2).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -221,7 +221,7 @@ public class OrderingBankCardTest {
     public void fillInTheCardDeliveryFormWithValidValuesWithDateLaterThanThreeDaysFromTheCurrentDate() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Саратов");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(4).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -236,7 +236,7 @@ public class OrderingBankCardTest {
     public void fillInTheCardDeliveryFormWithValidValuesIndicatingTheCurrentDate() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Саратов");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(0).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -250,7 +250,7 @@ public class OrderingBankCardTest {
     public void fillInTheCardDeliveryFormWithValidValuesIndicatingThePastDate() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Саратов");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(-1).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -264,7 +264,7 @@ public class OrderingBankCardTest {
     public void submitFormWithValidFirstNameAndDoubleLastNameSeparatedByHyphen() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов-Сидоров Иван");
@@ -279,7 +279,7 @@ public class OrderingBankCardTest {
     public void submitFormWithValidFirstAndLastNameInLatinLetters() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Ivanov Ivan");
@@ -293,7 +293,7 @@ public class OrderingBankCardTest {
     public void submitFormWithValidFirstAndLastNameValueWithLetterЁ() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Аксёнов Иван");
@@ -308,7 +308,7 @@ public class OrderingBankCardTest {
     public void submitFormWithValidFirstAndLastNameValueWithLetterЙ() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Сергей");
@@ -323,7 +323,7 @@ public class OrderingBankCardTest {
     public void submitFormWithValidFirstAndLastNameWithApostrophes() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("'Иванов Иван'");
@@ -337,7 +337,7 @@ public class OrderingBankCardTest {
     public void submitTheFormWithoutFirstAndLastName() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("");
@@ -351,7 +351,7 @@ public class OrderingBankCardTest {
     public void submitTheFormWithTheFirstAndLastNameFieldFilledInWithSpecialCharacters() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("!<>?");
@@ -365,7 +365,7 @@ public class OrderingBankCardTest {
     public void submitTheFormWithTheFirstAndLastNameFieldFilledInWithNumbers() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("123456");
@@ -379,7 +379,7 @@ public class OrderingBankCardTest {
     public void submitTheFormWithTheFirstAndLastNameFieldFilledInWithFourSpaces() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("    ");
@@ -393,7 +393,7 @@ public class OrderingBankCardTest {
     public void submitTheFormSpecifyingThePhoneNumberWithoutPlus() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -407,7 +407,7 @@ public class OrderingBankCardTest {
     public void fillOutTheFormWithoutSpecifyingThePhoneNumber() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -421,7 +421,7 @@ public class OrderingBankCardTest {
     public void fillOutTheFormBySpecifyingOneDigitOfThePhoneNumber() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -435,7 +435,7 @@ public class OrderingBankCardTest {
     public void fillOutTheFormWithTenDigitsOfThePhoneNumber() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -449,7 +449,7 @@ public class OrderingBankCardTest {
     public void fillOutTheFormBySpecifyingTheTwelveDigitsOfThePhoneNumber() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -463,22 +463,22 @@ public class OrderingBankCardTest {
     public void submitFormWithValidValuesAndWithoutConsent() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
         form.$("[data-test-id='phone'] input").setValue("+791100077889");
         form.$(".button").click();
-        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
-        $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + date));
+        $$(Selectors.byCssSelector(".input__sub")).find(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldBe(visible, Duration.ofSeconds(15));
+
     }
 
     @Test
     public void enteringTwoLettersInTheCityFieldAndThenSelectingDesiredCityFromDropDownList() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").sendKeys("кр");
-        form.$$(".menu-item").find(exactText("Краснодар")).click();
-        form.$("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
+        $$(".menu-item").find(exactText("Краснодар")).click();
+        $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         String date = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         form.$("[data-test-id='date'] input").setValue(date);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -493,11 +493,11 @@ public class OrderingBankCardTest {
     public void selectingSDateForTheWeekAheadStartingFromTheCurrentDateUsingTheCalendarTool() {
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").sendKeys("кр");
-        form.$$(".menu-item").find(exactText("Краснодар")).click();
+        $$(".menu-item").find(exactText("Краснодар")).click();
         form.$(".input__icon").click();
-        form.$("[data-step='1']").click();
-        form.$("[data-day='1730581200000']").click();
-        form.$("[data-test-id='name'] input").setValue("Иванов Иван");
+        $("[data-step='1']").click();
+        $("[data-day='1730581200000']").click();
+        $("[data-test-id='name'] input").setValue("Иванов Иван");
         form.$("[data-test-id='phone'] input").setValue("+79110007788");
         form.$("[data-test-id='agreement']").click();
         form.$(".button").click();
