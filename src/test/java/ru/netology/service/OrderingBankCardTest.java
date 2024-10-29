@@ -495,12 +495,13 @@ public class OrderingBankCardTest {
         form.$("[data-test-id='city'] input").sendKeys("кр");
         $$(".menu-item").find(exactText("Краснодар")).click();
         form.$(".input__icon").click();
-        $("[data-step='1']").click();
-        $("[data-day='1730581200000']").click();
-        $("[data-test-id='name'] input").setValue("Иванов Иван");
+        $(withText("5")).click();
+        form.$("[data-test-id='name'] input").setValue("Иванов Иван");
         form.$("[data-test-id='phone'] input").setValue("+79110007788");
         form.$("[data-test-id='agreement']").click();
         form.$(".button").click();
-        $(Selectors.byCssSelector("[data-test-id='notification']")).shouldBe(visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на 05.11.2024"));
     }
+
 }
